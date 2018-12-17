@@ -441,6 +441,11 @@ def games():
 
         return render_template("games.html")
 
+@app.route("/daily_box", methods=["GET", "POST"])
+def daily_box():
+    message = "Coming Soon!"
+
+    return render_template("daily_box.html", message=message)
 
 # REGISTER new user
 @app.route("/register", methods=["GET", "POST"])
