@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Make Picks
+{% endblock %}
+
+{% block main %}
+    <h1>
+        <p>
+            MAKE PICKS
+        </p>
+    </h1>
+        <h4>
+            <table align = "center", cellpadding = "10">
+                <tr>
+                    <th>
+                        FAV TEAM
+                    </th>
+                    <th>
+                        DOG TEAM
+                    </th>
+                </tr>
+
+        <form action="{{ url_for('make_picks') }}" method="post">
+            <fieldset>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="game 1 week 1h" name="Week 1 Game 1" value="{{ all_games_wc[0]['fav_team'] }}">
+                            <label for="game 1 week 1h">{{ all_games_wc[0]['fav_team'] }}</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="game 1 week 1a" name="Week 1 Game 1" value="{{ all_games_wc[0]['dog_team'] }}">
+                            <label for="game 1 week 1a">{{ all_games_wc[0]['dog_team'] }}</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="game 2 week 1h" name="Week 1 Game 2" value="{{ all_games_wc[1]['fav_team'] }}">
+                            <label for="game 2 week 1h">{{ all_games_wc[1]['fav_team'] }}</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="game 2 week 1a" name="Week 1 Game 2" value="{{ all_games_wc[1]['dog_team'] }}">
+                            <label for="game 2 week 1a">{{ all_games_wc[1]['dog_team'] }}</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="game 3 week 1h" name="Week 1 Game 3" value="{{ all_games_wc[2]['fav_team'] }}">
+                            <label for="game 3 week 1h">{{ all_games_wc[2]['fav_team'] }}</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="game 3 week 1a" name="Week 1 Game 3" value="{{ all_games_wc[2]['dog_team'] }}">
+                            <label for="game 3 week 1a">{{ all_games_wc[2]['dog_team'] }}</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="game 4 week 1h" name="Week 1 Game 4" value="{{ all_games_wc[3]['fav_team'] }}">
+                            <label for="game 4 week 1h">{{ all_games_wc[3]['fav_team'] }}</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="game 4 week 1a" name="Week 1 Game 4" value="{{ all_games_wc[3]['dog_team'] }}">
+                            <label for="game 4 week 1a">{{ all_games_wc[3]['dog_team'] }}</label>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </h4>
+
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Submit Picks</button>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock %}

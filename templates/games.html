@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Games
+{% endblock %}
+
+<!-- DH TODO - build form to record results of all 11 games that updates results table in DB -->
+
+
+
+{% block main %}
+    <form action="{{ url_for('games') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="gameid" placeholder="game number" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="fav" placeholder="Favorite" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="dog" placeholder="Underdog" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="line" placeholder="line" type="text"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Submit Games</button>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock %}

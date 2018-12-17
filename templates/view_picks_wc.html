@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Picks
+{% endblock %}
+
+{% block main %}
+
+    <h1>
+        <p>
+            View Picks
+        </p>
+    </h1>
+        <h4>
+            <table align = "center", cellpadding = "10">
+                <tr>
+                    <th>
+                        Username
+                    </th>
+                    <th>
+                        Game 1 WC
+                    </th>
+                     <th>
+                        Game 2 WC
+                    </th>
+                    <th>
+                        Game 3 WC
+                    </th>
+                    <th>
+                        Game 4 WC
+                    </th>
+        </h4>
+
+            <h4>
+                {% for rows in all_picks %}
+            <tr>
+                <td>
+                    {{ rows['username'] }}
+                </td>
+                <td>
+                    {{ rows['pick_1'] }}
+                </td>
+                <td>
+                    {{ rows['pick_2'] }}
+                </td>
+                <td>
+                    {{ rows['pick_3'] }}
+                </td>
+                <td>
+                    {{ rows['pick_4'] }}
+                </td>
+            </tr>
+            {% endfor %}
+
+            </h4>
+        </table>
+{% endblock %}

@@ -1,0 +1,25 @@
+spec - TODO
+
+
+2. index.html
+   - landing page
+   - display week games
+   - input form for picks
+   - links to standings
+   - register
+
+3. python backend
+   - nfl api
+
+5. css
+   - do last.. make pretty
+
+6. need admin facility to create games (low priority) and record results (high priority)
+
+7. more urgent
+   - create new database for standings (easier than on the fly)
+   - have a button admin runs that calcs and tallies.. and stores in db if doesn't exist yet
+   - standings page will just show this db
+
+
+

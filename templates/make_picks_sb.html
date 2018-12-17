@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Make Picks
+{% endblock %}
+
+{% block main %}
+    <h1>
+        <p>
+            MAKE PICKS
+        </p>
+    </h1>
+        <h4>
+            <table align = "center", cellpadding = "10">
+                <tr>
+                    <th>
+                        FAV TEAM
+                    </th>
+                    <th>
+                        DOG TEAM
+                    </th>
+                </tr>
+
+        <form action="{{ url_for('make_picks') }}" method="post">
+            <fieldset>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="Super Bowl h" name="Super Bowl" value="{{ all_games_sb[0]['fav_team'] }}">
+                            <label for="Super Bowl h">{{ all_games_sb[0]['fav_team'] }}</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="radio" id="Super Bowl a" name="Super Bowl" value="{{ all_games_sb[0]['dog_team'] }}">
+                            <label for="Super Bowl a">{{ all_games_sb[0]['dog_team'] }}</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </h4>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Tie Break" placeholder="SB Tie Breaker" type="text"/>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Submit Picks</button>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock %}

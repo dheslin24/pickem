@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Make Picks
+{% endblock %}
+
+{% block main %}
+    <h1>
+        <p>
+            Set Week
+        </p>
+    </h1>
+        <h4>
+
+        <form action="{{ url_for('set_week') }}" method="post">
+            <select name="set_week">
+                <option value="0">Pre WC</option>
+                <option value="1">After WC Picks</option>
+                <option value="2">After Div Picks</option>
+                <option value="3">After Conf Picks</option>
+                <option value="4">After SB Picks</option>
+            </select>
+
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Submit</button>
+            </div>
+        </form>
+        </h4>
+
+{% endblock %}

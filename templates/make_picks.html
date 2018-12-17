@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Make Picks
+{% endblock %}
+
+{% block main %}
+    <h1>
+        <p>
+            MAKE PICKS
+        </p>
+    </h1>
+        <h4>
+            <table align = "center", cellpadding = "10">
+                <tr>
+                    <th>
+                        FAV TEAM
+                    </th>
+                </tr>
+                {% for rows in all_games_wc %}
+                <tr>
+                    {{ rows['fav_team'] }}
+                </tr>
+            </table>
+        </h4>
+
+
+    <form action="{{ url_for('make_picks') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input type="radio" id="game 1 week 1h" name="Week 1 Game 1" value="ATL">
+                <label for="game 1 week 1h">atl</label>
+                <input type="radio" id="game 1 week 1a" name="Week 1 Game 1" value="LAR">
+                <label for="game 1 week 1a">LAR</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 2 week 1h" name="Week 1 Game 2" value="CAR">
+                <label for="game 2 week 1h">car</label>
+                <input type="radio" id="game 2 week 1a" name="Week 1 Game 2" value="MIN">
+                <label for="game 2 week 1a">MIN</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 3 week 1h" name="Week 1 Game 3" value="KC">
+                <label for="game 3 week 1h">KC</label>
+                <input type="radio" id="game 3 week 1a" name="Week 1 Game 3" value="TEN">
+                <label for="game 3 week 1a">ten</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 4 week 1h" name="Week 1 Game 4" value="JAX">
+                <label for="game 4 week 1h">JAX</label>
+                <input type="radio" id="game 4 week 1a" name="Week 1 Game 4" value="BUF">
+                <label for="game 4 week 1a">buf</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 1 week 2h" name="Week 2 Game 1" value="ATL">
+                <label for="game 1 week 2h">atl</label>
+                <input type="radio" id="game 1 week 2a" name="Week 2 Game 1" value="PHI">
+                <label for="game 1 week 2a">PHI</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 2 week 2h" name="Week 2 Game 2" value="PIT">
+                <label for="game 2 week 2h">PIT</label>
+                <input type="radio" id="game 2 week 2a" name="Week 2 Game 2" value="JAX">
+                <label for="game 2 week 2a">jax</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 3 week 2h" name="Week 2 Game 3" value="NE">
+                <label for="game 3 week 2h">NE</label>
+                <input type="radio" id="game 3 week 2a" name="Week 2 Game 3" value="TEN">
+                <label for="game 3 week 2a">ten</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 4 week 2h" name="Week 2 Game 4" value="NO">
+                <label for="game 4 week 2h">no</label>
+                <input type="radio" id="game 4 week 2a" name="Week 2 Game 4" value="MIN">
+                <label for="game 4 week 2a">MIN</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 1 week 3h" name="Week 3 Game 1" value="NE">
+                <label for="game 1 week 3h">NE</label>
+                <input type="radio" id="game 1 week 3a" name="Week 3 Game 1" value="JAX">
+                <label for="game 1 week 3a">jax</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="game 2 week 3h" name="Week 3 Game 2" value="MIN">
+                <label for="game 2 week 3h">min</label>
+                <input type="radio" id="game 2 week 3a" name="Week 3 Game 2" value="PHI">
+                <label for="game 2 week 3a">PHI</label>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id="Super Bowl h" name="Super Bowl" value="NE">
+                <label for="Super Bowl h">NE</label>
+                <input type="radio" id="Super Bowl a" name="Super Bowl" value="PHI">
+                <label for="Super Bowl a">PHI</label>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Tie Break" placeholder="SB Tie Breaker" type="text"/>
+            </div>
+
+
+
+
+
+
+
+            <!-- <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">car</a>
+                    <a href="#">MIN</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Week 1 Game 3" placeholder="KC -6.7 ten" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Week 1 Game 4" placeholder="JAX -6.7 buf" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Week 2 Game 1" placeholder="atl -3.5 PHI" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Week 2 Game 2" placeholder="PITT -6.5 jax" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Week 2 Game 3" placeholder="NE -13.5 ten" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Week 2 Game 4" placeholder="no -4.5 MIN" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Week 3 Game 1" placeholder="NE -7.5 jax" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Week 3 Game 2" placeholder="min -3.5 PHI" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Super Bowl" placeholder="NE -4.5 PHI" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="Super Bowl Tie Break" placeholder="Tie Break" type="text"/>
+            </div> -->
+
+
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Submit Picks</button>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock %}

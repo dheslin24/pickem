@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+<!-- DH TODO - build form to record results of all 11 games that updates results table in DB -->
+
+
+
+{% block main %}
+    <form action="{{ url_for('results') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="gameid" placeholder="game number" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="fav_team" placeholder="Favorite Team" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="fav_score" placeholder="Favorite Team's Score" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="dog_team" placeholder="Underdog Team" type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="dog_score" placeholder="Underdog Team's Score" type="text"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Submit Game Results</button>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock %}
